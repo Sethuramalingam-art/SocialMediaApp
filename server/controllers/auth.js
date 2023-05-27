@@ -38,3 +38,25 @@ export const register = async (request, response) => {
     response.status(500).json({ error: error.message });
   }
 };
+
+// LOGGIN USER
+
+export const login = async (request, response) => {
+  try {
+    const { email, password } = request.body;
+    const user = await User.findOne({ email: email });
+    if (!user)
+      return response.status(400).json({ msg: "User does not exist. " });
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch)
+      return response.status(400).json({ msg: "Invalid credentials. " });
+
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET); //JWT then uses the sign() method to create a JSON Web Token for that user and returns the token in the form of a JSON string.
+    delete user.password;
+
+    response.status(200).json({ token, user });
+  } catch (error) {
+    response.status(500).json({ error: error.message });
+  }
+};
