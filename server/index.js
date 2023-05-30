@@ -10,7 +10,10 @@ import path from "path";
 import { fileURLToPath } from "url";
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/user.js";
+import postRoutes from "./routes/posts.js";
 import { register } from "./controllers/auth.js";
+import { createPost } from "./controllers/posts.js";
+import { verifyToken } from "./middleware/auth.js";
 
 // CONFIGURATIONS
 const __filename = fileURLToPath(import.meta.url);
@@ -42,9 +45,13 @@ const upload = multer({ storage }); // we can use this upload variable to upload
 // ROUTES WITH FILES
 app.post("/auth/register", upload.single("picture"), register);
 
+// NEED TO UPLOAD THE POST SO NEED AUTH
+app.post("/posts", verifyToken, upload.single("picture"), createPost);
+
 // ROUTES SETUP
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
+app.use("/posts", postRoutes);
 
 // MONGOOSE SETUP
 
