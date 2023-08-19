@@ -14,16 +14,20 @@ import postRoutes from "./routes/posts.js";
 import { register } from "./controllers/auth.js";
 import { createPost } from "./controllers/posts.js";
 import { verifyToken } from "./middleware/auth.js";
+import User from "./models/User.js";
+import Post from "../models/Post.js";
+import { users, posts } from "./data/index.js";
 
 // CONFIGURATIONS
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dontenv.config();
+
 const app = express();
 app.use(express.json()); // express.json() is a built-in middleware function in Express. This method is used to parse the incoming requests with JSON payloads and is based upon the bodyparser.This method returns the middleware that only parses JSON and only looks at the requests where the content-type header matches the type option.
-app.use(helmet());
+app.use(helmet()); // What is the difference between helmet and CORS? Helmet and Cors are 2 important node. js packages with different purposes. Helmet secures your express app by setting response HTTP headers appropriately, while Cors enables your express application access control to allow restricted resources from being accessed from external domains.
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
-app.use(morgan("common"));
+app.use(morgan("common")); //morgan is http request middleware used to logg the request response logs
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
@@ -64,6 +68,9 @@ mongoose
   })
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+    // manually insert users and posts from data index file to schmes
+    User.insertMany(users);
+    Post.insertMany(posts);
   })
   .catch((error) => {
     console.log(`${error} did not connect`);
