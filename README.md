@@ -37,3 +37,6 @@
 # Server: When you have "type": "module" in the package.json file, your source code should use import syntax. When you do not have, you should use require syntax; that is, adding "type": "module" to the package.json enables ES 6 modules.
 
 # Configurations
+
+
+to start backend server => nodemon index.js
