@@ -40,3 +40,25 @@
 
 
 to start backend server => nodemon index.js
+
+
+if you want npx install => npm install -g npx 
+
+**redux-presist** - Redux persist takes your Redux state object and save it to Persistence storage.
+
+For example, If we store your redux reducers using redux persist, It will not clear when you close your app. You have that old data when you open your app again.
+
+Whenever you uninstall your app, at that time only your reducers will be clear.
+
+**react-dropzone** -> used for document upload in frontend
+
+**yup** => for validations 
+
+****formik** **=> for form handling
+
+**@mui/icons** => for material ui
+
+for frontend
+
+npm install react-redux @reduxjs/toolkit redux-presist react-dropzone dotenv formik 
+yup react-router-dom@latest @mui/material @emotion/react @emotion/styled @mui/icons-material
