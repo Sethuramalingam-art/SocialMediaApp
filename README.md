@@ -38,6 +38,7 @@
 
 # Configurations
 
+npm install -g nodemon
 
 to start backend server => nodemon index.js
 
