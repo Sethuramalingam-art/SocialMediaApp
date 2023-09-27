@@ -139,8 +139,7 @@ const Navbar = () => {
           <Box display="flex" justifyContent="flex-end" p="1rem">
             <IconButton
               onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
-            >
-              <Close />
+            >              <Close />
             </IconButton>
           </Box>
         </Box>
