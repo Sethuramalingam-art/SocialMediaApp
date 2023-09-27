@@ -40,7 +40,7 @@
 
 npm install -g nodemon
 
-to start backend server => nodemon index.js
+to start backend server => npm start => nodemon index.js
 
 
 if you want npx install => npm install -g npx 
