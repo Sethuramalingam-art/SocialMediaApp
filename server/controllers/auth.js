@@ -16,7 +16,7 @@ export const register = async (request, response) => {
       occupation,
     } = request.body;
     // salt used for password encrption
-    const salt = await bcrypt.salt(); // bcrypt uses a 128-bit salt and encrypts a 192-bit magic value. It takes advantage of the fact that the Blowfish algorithm (used in the core of bcrypt for password hashing) needs a fairly expensive key setup, thus considerably slowing down dictionary-based attacks.
+    const salt = await bcrypt.genSalt(); // bcrypt uses a 128-bit salt and encrypts a 192-bit magic value. It takes advantage of the fact that the Blowfish algorithm (used in the core of bcrypt for password hashing) needs a fairly expensive key setup, thus considerably slowing down dictionary-based attacks.
     const passwordHash = await bcrypt.hash(password, salt); //The bcrypt hashing function allows us to build a password security platform that scales with computation power and always hashes every password with a salt.
 
     const newUser = new User({
