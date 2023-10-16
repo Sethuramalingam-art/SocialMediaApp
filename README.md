@@ -63,3 +63,7 @@ for frontend
 
 npm install react-redux @reduxjs/toolkit redux-presist react-dropzone dotenv formik 
 yup react-router-dom@latest @mui/material @emotion/react @emotion/styled @mui/icons-material
+
+we’ve learned how to use Redux Persist in Redux Toolkit to save our data in persistent storage. Therefore, our data will still remain even after a browser refresh. We also explored several options for customizing Redux Persist, for example, specifying which storage engine to use, and customizing what is persisted in our state using the blacklist and whitelist properties.
+
+Although at the time of writing, Redux Persist is under maintenance and has not been updated for some time, it is still a great tool with strong community support.
