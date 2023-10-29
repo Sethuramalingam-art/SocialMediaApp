@@ -19,8 +19,7 @@ export const authSlice = createSlice({
       return { ...state, user: user, token: token };
     },
     setLogout: (state) => {
-      state.user = null;
-      state.token = null;
+      return { ...state, user: null, token: null };
     },
     setFriends: (state, action) => {
       if (state.user) {
@@ -34,7 +33,7 @@ export const authSlice = createSlice({
     },
     setPost: (state, action) => {
       const updatedPosts = state.posts.map((post) => {
-        if (post._id === action.payload.post_id) {
+        if (post._id === action.payload.post._id) {
           return action.payload.post;
         }
         return post;
