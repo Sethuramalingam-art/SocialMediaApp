@@ -62,9 +62,9 @@ app.use("/posts", postRoutes);
 const PORT = process.env.PORT || 6001;
 
 //app.use(cors({
-  //origin:["https://deploy-socialmedia-sxs.vercel.app"],
-  //methods:["POST", "GET", "DELETE", "PATCH"],
-  //credentials: true
+//origin:["https://deploy-socialmedia-sxs.vercel.app"],
+//methods:["POST", "GET", "DELETE", "PATCH"],
+//credentials: true
 //}));
 mongoose
   .connect(process.env.MONGO_URL, {

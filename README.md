@@ -42,8 +42,7 @@ npm install -g nodemon
 
 to start backend server => npm start => nodemon index.js
 
-
-if you want npx install => npm install -g npx 
+if you want npx install => npm install -g npx
 
 **redux-presist** - Redux persist takes your Redux state object and save it to Persistence storage.
 
@@ -53,15 +52,15 @@ Whenever you uninstall your app, at that time only your reducers will be clear.
 
 **react-dropzone** -> used for document upload in frontend
 
-**yup** => for validations 
+**yup** => for validations
 
-****formik** **=> for form handling
+\***\*formik** \*\*=> for form handling
 
 **@mui/icons** => for material ui
 
 for frontend
 
-npm install react-redux @reduxjs/toolkit redux-presist react-dropzone dotenv formik 
+npm install react-redux @reduxjs/toolkit redux-presist react-dropzone dotenv formik
 yup react-router-dom@latest @mui/material @emotion/react @emotion/styled @mui/icons-material
 
 we’ve learned how to use Redux Persist in Redux Toolkit to save our data in persistent storage. Therefore, our data will still remain even after a browser refresh. We also explored several options for customizing Redux Persist, for example, specifying which storage engine to use, and customizing what is persisted in our state using the blacklist and whitelist properties.

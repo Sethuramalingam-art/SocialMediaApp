@@ -6,8 +6,6 @@ import authReducer from "./state";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 
-// As of now presist is commented for state flow fix
-
 // import {
 //   PAUSE,
 //   persistStore,
