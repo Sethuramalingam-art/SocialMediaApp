@@ -8,7 +8,7 @@ const UserImage = ({ image, size = "60px" }) => {
         width={size}
         height={size}
         alt="user"
-        src={`https://socialmediaapp-6.onrender.com/assets/${image}`}
+        src={`/assets/${image}`}
       />
     </Box>
   );
