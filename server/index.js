@@ -62,6 +62,7 @@ app.use("/posts", postRoutes);
 const __dirname1 = path.resolve();
 
 if (process.env.NODE_ENV === "production") {
+  console.log(__dirname1);
   app.use(express.static(path.join(__dirname1, "/client/build")));
 
   app.get("*", (req, res) =>
