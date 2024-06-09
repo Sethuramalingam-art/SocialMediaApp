@@ -6,6 +6,9 @@
       "use": "@vercel/node"
     }
   ],
+  "build": {
+    "command": "npm install --peer-dependencies && npm run build"
+  },
   "routes": [
     {
       "src": "/(.*)",
